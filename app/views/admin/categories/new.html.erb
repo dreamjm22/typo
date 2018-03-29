@@ -4,7 +4,7 @@
   <!-- NOTE: 
        Do not modify :action=>"edit" since the autograder depends on it 
    -->
-  <%= form_tag :action=>"edit", :id => @category.object_id do %>
+  <%= form_tag :action=>"edit", :id => @category.id do %>
   <%= error_messages_for 'category' %>
   <div class='clearfix'>
     <label for="category_name"><%= _("Name")%></label>
@@ -49,7 +49,7 @@
     </thead>
     <%= render_void_table(@categories.size, 4)  %>
     <% for category in @categories -%>
-    <tr <%= alternate_class -%> id="category_<%= category.id -%>">
+    <tr <%= alternate_class -%> id="category_<%= category.object_id -%>">
       <td>
         <%= link_to_edit category.name, category %><br />
         <%= show_category_actions category %>
