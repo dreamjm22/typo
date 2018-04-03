@@ -47,3 +47,22 @@ describe Category do
 end
 
 
+describe "Store" do
+  c = Factory(:category, :permalink => 'Ubbercool')
+  c.permalink.should == "Ubbercool"
+  
+  it "test_id" do
+    assert_equal Category.find(c.id).permalink, c.permalink
+  end
+  
+    it "test_create_model" do
+      a = Category.new
+      a.name = "Foo"
+      a.keywords = "Zzz"
+      assert a.save
+  
+      b = Category.find(a.id)
+      assert_equal a.name, b.name
+    end
+end
+

@@ -8,7 +8,7 @@ describe CategoriesController, "/index" do
       2.times { category.articles << Factory(:article) }
     }
   end
-
+  
   describe "normally" do
     before do
       controller.stub(:template_exists?).and_return false

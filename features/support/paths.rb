@@ -19,7 +19,8 @@ module NavigationHelpers
       '/admin/content/new'
     when /^the category page$/
       '/admin/categories/new'
-    
+    when /^the category delete page$/
+      '/admin/categories/destroy/2'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
